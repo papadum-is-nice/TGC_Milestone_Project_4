@@ -1,8 +1,14 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
+<h1>Show Guitars</h1>
 
-  <h1>Show Guitars</h1>  
-  
+<ul>
+    {% for guitar in all_guitars %}
+    <li>{{guitar.brand}} made in {{guitar.prod_year}}
+    <br>
+    Price:SGD${{guitar.cost}}</li>
+    {% endfor %}
+</ul>
+
+
 {% endblock %}
-
