@@ -7,6 +7,9 @@
     <li>{{guitar.brand}} made in {{guitar.prod_year}}
     <br>
     Price:SGD${{guitar.cost}}</li>
+    <a href="{% url 'update_guitar' guitar_id=guitar.id %}">Edit</a>
+    <br>
+    <br>
     {% endfor %}
 </ul>
 

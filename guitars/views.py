@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Guitars
 from .forms import Guitarsform
 
@@ -21,6 +21,25 @@ def create_guitars(request):
     else:
         create_guitars_form = Guitarsform()
   
-    return render(request, 'create_guitar.template.html', {
+    return render(request, 'create_guitar.html', {
         'form':create_guitars_form
+    })
+    
+
+def update_guitars(request, guitar_id):
+    guitars_being_updated = get_object_or_404(Guitars, pk=guitar_id)
+    
+    if request.method == "POST":
+        # for update
+        update_guitars_form = Guitarsform(request.POST, instance=guitars_being_updated)
+        if update_guitars_form.is_valid():
+            update_guitars_form.save()
+         
+            # always make sure to return the redirect
+            return redirect(reverse(show_guitars))
+    else:
+        update_guitars_form = Guitarsform(instance=guitars_being_updated)
+    
+    return render(request, 'update_guitars.html',{
+        'form':update_guitars_form
     })
