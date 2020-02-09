@@ -1,10 +1,14 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+
+{% load crispy_forms_tags %}
+
+{% block content %}
 
 <h1>Update Guitars</h1>
 {{ form.media }}
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy}}
         <input type='submit' value='Update'/>
     </form>
 

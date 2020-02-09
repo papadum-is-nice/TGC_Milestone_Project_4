@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'guitars',
     'pyuploadcare.dj',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,8 @@ UPLOADCARE = {
     'pub_key': UPLOADCARE_PUBLIC_KEY,
     'secret': UPLOADCARE_SECRET_KEY,
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 # STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
