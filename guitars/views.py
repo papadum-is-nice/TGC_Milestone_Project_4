@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from .models import Guitars
 from .forms import Guitarsform
 
@@ -16,6 +17,7 @@ def create_guitars(request):
         create_guitars_form = Guitarsform(request.POST)
         if create_guitars_form.is_valid():
             create_guitars_form.save()
+            messages.success(request, "Guitar is newly created!")
             return redirect(reverse(show_guitars))
       
     else:
