@@ -43,3 +43,15 @@ def update_guitars(request, guitar_id):
     return render(request, 'update_guitars.html',{
         'form':update_guitars_form
     })
+    
+def confirm_delete_guitar(request, guitar_id):
+    guitar_being_deleted = get_object_or_404(Guitars, pk=guitar_id)
+    return render(request, 'confirm_delete_guitar.html', {
+        'guitar':guitar_being_deleted
+    })
+    
+
+def actually_delete_guitar(request, guitar_id):
+    guitar_being_deleted = get_object_or_404(Guitars, pk=guitar_id)
+    guitar_being_deleted.delete()
+    return redirect(reverse('show_guitars'))

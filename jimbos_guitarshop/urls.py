@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import home
-from guitars.views import show_guitars, create_guitars, update_guitars
+from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('show_guitars/', show_guitars),
+    path('show_guitars/', show_guitars, name="show_guitars"),
     path('create_guitars/', create_guitars),
-    path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"), 
+    path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
+    path('confirm_delete_guitar/<guitar_id>', confirm_delete_guitar, name="confirm_delete_guitar"),
+    path('actually_delete/<guitar_id>', actually_delete_guitar, name='delete_guitar')
+
 ]
+

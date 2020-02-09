@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Confirm Delete Guitar</h1>
+
+<h1>Are you sure you want to delete this guitar</h1>
+<p>Guitar: {{guitar.brand}}
+<form method='POST' action='{% url "delete_guitar" guitar_id=guitar.id %}'>
+    {% csrf_token %}
+    <input type='submit' value='Yes, delete'>
+    <a href='{% url "show_guitars" %}'>No</a>
+</form>
+
+
+
+{% endblock %}
