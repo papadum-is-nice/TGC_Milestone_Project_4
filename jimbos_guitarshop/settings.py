@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'guitars',
     'pyuploadcare.dj',
     'crispy_forms',
+    'users',
 ]
 
 MIDDLEWARE = [

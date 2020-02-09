@@ -27,7 +27,7 @@ urlpatterns = [
     path('confirm_delete_guitar/<guitar_id>', confirm_delete_guitar, name="confirm_delete_guitar"),
     path('actually_delete/<guitar_id>', actually_delete_guitar, name='delete_guitar'),
     path('accounts/', include('django.contrib.auth.urls')),
-
+    path('users/', include('users.urls')),
 
 ]
 
