@@ -10,7 +10,7 @@ class Guitars(models.Model):
     stockrem= models.IntegerField(blank=False, default=0)
     cost = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
     gtype = models.ForeignKey('Gtype', blank=True, null=True, on_delete=models.CASCADE)
-    image = ImageField(blank=True, null=True),
+    image = ImageField(blank=True, null=True)
     
     def __str__(self):
         return self.brand + " + " + str(self.stockrem)

@@ -4,6 +4,10 @@
 
 <ul>
     {% for guitar in all_guitars %}
+        {%if guitar.image %}
+        <img src="{{guitar.image.cdn_url}}"/>
+        {%endif%}
+    
     <li>{{guitar.brand}} made in {{guitar.prod_year}}
     <br>
     Price:SGD${{guitar.cost}}</li>
