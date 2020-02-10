@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'pyuploadcare.dj',
     'crispy_forms',
     'users',
+    'cart',
 ]
 
 MIDDLEWARE = [

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import home
 from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
+from cart.views import add_to_cart, view_cart, remove_from_cart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,8 @@ urlpatterns = [
     path('actually_delete/<guitar_id>', actually_delete_guitar, name='delete_guitar'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('users/', include('users.urls')),
-
+    path('cart/', view_cart, name="view_cart"),
+    path('add_to_cart/<guitar_id>', add_to_cart, name="add_to_cart"),
+    path('remove/<guitar_id>', remove_from_cart, name="remove_from_cart"),
 ]
 

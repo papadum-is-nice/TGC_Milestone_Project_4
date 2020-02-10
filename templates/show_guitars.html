@@ -13,6 +13,7 @@
     Price:SGD${{guitar.cost}}</li>
     <a href="{% url 'update_guitar' guitar_id=guitar.id %}">Edit</a>
     <a href="{% url 'confirm_delete_guitar' guitar_id=guitar.id %}">Delete</a>
+    <a href="{% url 'add_to_cart' guitar_id=guitar.id %}">Add to Cart</a>
     <br>
     <br>
     {% endfor %}

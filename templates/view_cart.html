@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{%block content %}
+<h1>Your Cart</h1>
+<ul>
+    {%for id,guitar in shopping_cart.items %}
+        <li>
+            <img src="{{guitar.image_url}}" />
+            {{guitar.brand}}
+            ${{guitar.cost}}
+        </li>
+    <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}">Remove from Cart</a>    
+    {%endfor%}
+</ul>
+{%endblock %}
