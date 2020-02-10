@@ -18,10 +18,11 @@ from django.urls import path, include
 from home.views import home
 from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
 from cart.views import add_to_cart, view_cart, remove_from_cart
+from checkout.views import checkout, checkout_success, checkout_cancelled, payment_completed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
+    path('', home, name="home"),
     path('show_guitars/', show_guitars, name="show_guitars"),
     path('create_guitars/', create_guitars),
     path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
@@ -32,5 +33,10 @@ urlpatterns = [
     path('cart/', view_cart, name="view_cart"),
     path('add_to_cart/<guitar_id>', add_to_cart, name="add_to_cart"),
     path('remove/<guitar_id>', remove_from_cart, name="remove_from_cart"),
+    path('checkout/', checkout, name='checkout'),
+    path('success/', checkout_success),
+    path('cancelled/', checkout_cancelled),
+    path('payment_completed/', payment_completed),
+    
 ]
 

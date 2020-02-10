@@ -8,7 +8,7 @@ class Guitars(models.Model):
     desc = models.TextField(blank=False)
     prod_year= models.IntegerField(blank=False)
     stockrem= models.IntegerField(blank=False, default=0)
-    cost = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
+    cost = models.FloatField(blank=False)
     gtype = models.ForeignKey('Gtype', blank=True, null=True, on_delete=models.CASCADE)
     image = ImageField(blank=True, null=True)
     
