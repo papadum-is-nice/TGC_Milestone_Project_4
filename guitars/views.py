@@ -1,15 +1,23 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .models import Guitars
-from .forms import Guitarsform
+from .forms import Guitarsform, GuitarsSearchForm
 
 # Create your views here.
 
 
 def show_guitars(request):
     all_guitars = Guitars.objects.all()
+    form = GuitarsSearchForm()
+    if request.GET.get('search_terms'):
+        all_guitars = all_guitars.filter(brand__contains=request.GET.get('search_terms'))
+    if request.GET.get('min_cost'):
+        all_guitars = all_guitars.filter(cost__gte=request.GET.get('min_cost'))
+    if request.GET.get('max_cost'):
+        all_guitars = all_guitars.filter(cost__lte=request.GET.get('max_cost'))
     return render(request, 'show_guitars.html', {
-        'all_guitars':all_guitars
+        'all_guitars':all_guitars,
+        'search_form':form
     })
 
 def create_guitars(request):
