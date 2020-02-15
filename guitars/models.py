@@ -5,9 +5,11 @@ from pyuploadcare.dj.models import ImageField
 
 class Guitars(models.Model):
     brand = models.CharField(blank=False, max_length=255)
+    model = models.CharField(blank=False, max_length=255)
     desc = models.TextField(blank=False)
-    prod_year= models.IntegerField(blank=False)
-    stockrem= models.IntegerField(blank=False, default=0)
+    color = models.CharField(blank=False, max_length=255)
+    prod_year = models.IntegerField(blank=False)
+    stockrem = models.IntegerField(blank=False, default=0)
     cost = models.FloatField(blank=False)
     gtype = models.ForeignKey('Gtype', blank=True, null=True, on_delete=models.CASCADE)
     image = ImageField(blank=True, null=True)
