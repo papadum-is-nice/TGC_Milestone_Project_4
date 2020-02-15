@@ -15,7 +15,7 @@ class Guitars(models.Model):
     image = ImageField(blank=True, null=True)
     
     def __str__(self):
-        return self.brand + " + " + str(self.stockrem)
+        return self.brand + " " + str(self.model) + " + " + str(self.stockrem)
     
 class Gtype(models.Model):
     name = models.CharField(blank=False, max_length=100)
