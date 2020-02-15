@@ -12,14 +12,14 @@
         <img src="{{guitar.image.cdn_url}}"/>
         {%endif%}
     
-    <li>{{guitar.brand}} made in {{guitar.prod_year}}
-    <br>
-    Price:SGD${{guitar.cost}}</li>
-    <a href="{% url 'update_guitar' guitar_id=guitar.id %}">Edit</a>
-    <a href="{% url 'confirm_delete_guitar' guitar_id=guitar.id %}">Delete</a>
-    <a href="{% url 'add_to_cart' guitar_id=guitar.id %}">Add to Cart</a>
-    <br>
-    <br>
+    <li>{{guitar.brand}}</li>
+    <li>{{guitar.model}}</li>
+    <li>{{guitar.color}}</li>
+    <li>Price: SGD${{guitar.cost}}</li>
+    <li>Stock Left: {{guitar.stockrem}}</li>
+    <a href="{% url 'add_to_cart' guitar_id=guitar.id %}">Add to Cart</a><br>
+    <a href="{% url 'update_guitar' guitar_id=guitar.id %}">Edit</a><br>
+    <a href="{% url 'confirm_delete_guitar' guitar_id=guitar.id %}">Delete</a><br>
     {% endfor %}
 </ul>
 

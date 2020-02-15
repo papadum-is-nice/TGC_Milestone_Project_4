@@ -4,14 +4,14 @@ from pyuploadcare.dj.models import ImageField
 # Create your models here.
 
 class Guitars(models.Model):
-    brand = models.CharField(blank=False, max_length=255)
-    model = models.CharField(blank=False, max_length=255)
-    desc = models.TextField(blank=False)
-    color = models.CharField(blank=False, max_length=255)
-    prod_year = models.IntegerField(blank=False)
-    stockrem = models.IntegerField(blank=False, default=0)
-    cost = models.FloatField(blank=False)
+    brand = models.CharField(blank=False, max_length=30)
+    model = models.CharField(blank=False, max_length=50)
     gtype = models.ForeignKey('Gtype', blank=True, null=True, on_delete=models.CASCADE)
+    desc = models.TextField(blank=False)
+    color = models.CharField(blank=False, max_length=50)
+    prod_year = models.CharField(blank=False, max_length=4)
+    cost = models.FloatField(blank=False)
+    stockrem = models.IntegerField(blank=False, default=0)
     image = ImageField(blank=True, null=True)
     
     def __str__(self):
