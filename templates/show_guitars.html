@@ -12,9 +12,9 @@
         <img src="{{guitar.image.cdn_url}}"/>
         {%endif%}
     
-    <li>{{guitar.brand}}</li>
-    <li>{{guitar.model}}</li>
-    <li>{{guitar.color}}</li>
+    <li>Brand: {{guitar.brand}}</li>
+    <li>Model: {{guitar.model}}</li>
+    <li>Color: {{guitar.color}}</li>
     <li>Price: SGD${{guitar.cost}}</li>
     <li>Stock Left: {{guitar.stockrem}}</li>
     <a href="{% url 'add_to_cart' guitar_id=guitar.id %}">Add to Cart</a><br>

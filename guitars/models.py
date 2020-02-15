@@ -9,7 +9,7 @@ class Guitars(models.Model):
     gtype = models.ForeignKey('Gtype', blank=True, null=True, on_delete=models.CASCADE)
     desc = models.TextField(blank=False)
     color = models.CharField(blank=False, max_length=50)
-    prod_year = models.CharField(blank=False, max_length=4)
+    prod_year = models.CharField(blank=True, max_length=4)
     cost = models.FloatField(blank=False)
     stockrem = models.IntegerField(blank=False, default=0)
     image = ImageField(blank=True, null=True)
