@@ -22,14 +22,14 @@ def checkout(request):
     line_items = []
     
     # generate the line_items
-    for id,guitars in cart.items():
+    for id,guitar in cart.items():
         # For each item in the cart, get its details from the database
         guitars = get_object_or_404(Guitars, pk=id)
         line_items.append({
             'name': guitars.brand,
             'amount': int(guitars.cost*100), #convert to cents, in integer
             'currency':'sgd',
-            'quantity':1
+            'quantity':guitar['quantity']
         })
     
     #generate the session

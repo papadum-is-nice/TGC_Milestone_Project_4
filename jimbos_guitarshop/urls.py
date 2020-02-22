@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
     path('show_guitars/', show_guitars, name="show_guitars"),
-    path('create_guitars/', create_guitars),
+    path('create_guitars/', create_guitars, name="create_guitars"),
     path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
     path('confirm_delete_guitar/<guitar_id>', confirm_delete_guitar, name="confirm_delete_guitar"),
     path('actually_delete/<guitar_id>', actually_delete_guitar, name='delete_guitar'),
