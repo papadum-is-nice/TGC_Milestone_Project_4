@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from home.views import home
+from home.views import home,  about_us
 from users.views import signup, profile
 from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
 from cart.views import add_to_cart, view_cart, remove_from_cart, adjust_cart
@@ -24,6 +24,7 @@ from checkout.views import checkout, checkout_success, checkout_cancelled, payme
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
+    path('about_us/', about_us, name="about_us"),
     path('show_guitars/', show_guitars, name="show_guitars"),
     path('create_guitars/', create_guitars, name="create_guitars"),
     path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
