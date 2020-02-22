@@ -12,7 +12,7 @@ def show_guitars(request):
     # all_models = Guitars.objects.filter(model__contains)
     form = GuitarsSearchForm()
     if request.GET.get('search_terms'):
-        all_guitars = all_guitars.filter(Q(brand__contains=request.GET.get('search_terms'))|Q(model__contains=request.GET.get('search_terms'))|Q(gtype__name__contains=request.GET.get('search_terms'))|Q(desc__contains=request.GET.get('search_terms')))
+        all_guitars = all_guitars.filter(Q(brand__icontains=request.GET.get('search_terms'))|Q(model__icontains=request.GET.get('search_terms'))|Q(gtype__name__icontains=request.GET.get('search_terms'))|Q(desc__icontains=request.GET.get('search_terms')))
         # all_models = all_guitars.filter(model__contains=request.GET.get('search_terms'))
         # print(all_models)
     if request.GET.get('min_cost'):
