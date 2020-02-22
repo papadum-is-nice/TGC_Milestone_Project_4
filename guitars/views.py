@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from .models import Guitars
 from .forms import Guitarsform, GuitarsSearchForm
 
@@ -8,16 +9,20 @@ from .forms import Guitarsform, GuitarsSearchForm
 
 def show_guitars(request):
     all_guitars = Guitars.objects.all()
+    # all_models = Guitars.objects.filter(model__contains)
     form = GuitarsSearchForm()
     if request.GET.get('search_terms'):
-        all_guitars = all_guitars.filter(brand__contains=request.GET.get('search_terms'))
+        all_guitars = all_guitars.filter(Q(brand__contains=request.GET.get('search_terms'))|Q(model__contains=request.GET.get('search_terms'))|Q(gtype__name__contains=request.GET.get('search_terms'))|Q(desc__contains=request.GET.get('search_terms')))
+        # all_models = all_guitars.filter(model__contains=request.GET.get('search_terms'))
+        # print(all_models)
     if request.GET.get('min_cost'):
         all_guitars = all_guitars.filter(cost__gte=request.GET.get('min_cost'))
     if request.GET.get('max_cost'):
         all_guitars = all_guitars.filter(cost__lte=request.GET.get('max_cost'))
     return render(request, 'show_guitars.html', {
         'all_guitars':all_guitars,
-        'search_form':form
+        'search_form':form,
+        # 'all_models':all_models
     })
 
 def create_guitars(request):

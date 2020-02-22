@@ -1,15 +1,24 @@
-{% extends 'base.html' %}
-
-{%block content %}
+{% extends 'base.html' %} {%block content %}
 <h1>Your Cart</h1>
 <ul>
     {%for id,guitar in shopping_cart.items %}
-        <li>
-            <img src="{{guitar.image_url}}" />
-            {{guitar.brand}}
-            ${{guitar.cost}}
-        </li>
-    <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}">Remove from Cart</a>    
-    {%endfor%}
+    <li>
+        <img src="{{guitar.image_url}}" /> {{guitar.brand}} ${{guitar.cost}} Quantity: {{guitar.quantity}}
+
+        <form class="form-inline" method="post" action="{% url 'adjust_cart' guitar_id=guitar.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                <div class="input-group">
+                    <!--&nbsp;-->
+                    <!--<div class="container"></div>-->
+                    <div class="input-group-addon cart_div">Quantity to change to:&nbsp&nbsp&nbsp</div>
+                    <input name="quantity" type="number" min="0" max="999" class="form-control" id="input_width" value="{{guitar.quantity}}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="cart_btn_primary_id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; Apply</button>
+        </form>
+    </li>
+    <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}">Remove from Cart</a> {%endfor%}
 </ul>
-{%endblock %}
+<a href="{% url 'checkout' %}" class="btn btn-success">CHECKOUT</a> {%endblock %}

@@ -15,10 +15,10 @@ def signup(request):
             return redirect('/')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'users/signup.html', {'form': form})
     
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html',{
+    return render(request, 'profile.html',{
         'current_user':request.user
     })

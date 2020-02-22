@@ -137,3 +137,21 @@
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
+
+
+/* Jimbo's*/
+.login {
+	margin-top: 10rem;
+}
+
+.logout {
+	margin-top: 10rem;
+}
+
+.password_reset_form {
+	margin-top: 10rem;
+}
+
+.password_reset_done {
+	margin-top: 10rem;
+}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from guitars.models import Guitars
 
@@ -43,3 +43,16 @@ def remove_from_cart(request, guitar_id):
         request.session['shopping_cart'] = cart
         messages.success(request, 'Guitar has been removed')
         return redirect('/cart/') 
+        
+def adjust_cart(request, guitar_id):
+    # print(request.POST)
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('shopping_cart', {})
+
+    if quantity > 0:
+        cart[guitar_id]["quantity"]= quantity
+    else:
+        cart.pop(id)
+    
+    request.session['shopping_cart'] = cart
+    return redirect(reverse('view_cart'))        
