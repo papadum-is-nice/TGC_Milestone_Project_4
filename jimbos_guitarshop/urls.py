@@ -34,7 +34,7 @@ urlpatterns = [
     # path('login/', login),
     # path('logout/', logout),
     # path('signup/', signup),
-    path('profile/', profile),
+    path('profile/', profile, name="profile"),
     path('cart/', view_cart, name="view_cart"),
     path('add_to_cart/<guitar_id>', add_to_cart, name="add_to_cart"),
     path('adjust_cart/<guitar_id>', adjust_cart, name='adjust_cart'),
