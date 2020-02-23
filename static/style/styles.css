@@ -164,6 +164,10 @@
 	margin-top: 10rem;
 }
 
-.aboutus {
+.showguitar {
 	margin-top: 10rem;
+}
+
+.bg {
+  background-image: url(/static/images/Shop background copy.jpg);
 }

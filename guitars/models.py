@@ -1,8 +1,6 @@
 from django.db import models
 from pyuploadcare.dj.models import ImageField
 
-# Create your models here.
-
 class Guitars(models.Model):
     brand = models.CharField(blank=False, max_length=30)
     model = models.CharField(blank=False, max_length=50)
