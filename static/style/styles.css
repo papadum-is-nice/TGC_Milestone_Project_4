@@ -176,11 +176,39 @@
 	margin-bottom: 1rem
 }
 
-/*.cart .card img {*/
+/*cart page*/
 
-/*	width: 50%;*/
+.guitar_cart .card {
+	margin: 4rem 2rem;
+	border: none;
+}
 
-/*}*/
+.guitar_cart .card-image {
+	margin: 0 auto;
+}
+
+.guitar_cart img {
+	width: 5rem;
+}
+
+.guitar_cart .card-content {
+	margin: 0 auto;
+}
+
+.guitar_cart .apply_btn {
+	position: relative;
+	top: -8px;
+}
+
+.guitar_cart .remove_btn {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.guitar_cart .checkout_btn a {
+	width: 100%;
+	margin-bottom: 4rem;
+}
 
 @media (min-width: 320px) and (max-width: 575px) {
 	.navbar input {
@@ -197,6 +225,16 @@
 	}
 }
 
+@media (min-width: 576px) {
+	.guitar_cart .apply_btn {
+		/*position: relative;*/
+		top: 0;
+	}
+	.guitar_cart .remove_btn {
+		margin-top: 1rem !important;
+	}
+}
+
 @media (min-width: 768px) {
 	.guitar_shop .card {
 		margin: 4rem;
@@ -209,9 +247,9 @@
 }
 
 @media (min-width: 1024px) {
-.about_us {
-	margin: 6rem;
-}
+	.about_us {
+		margin: 6rem;
+	}
 
 }
 
