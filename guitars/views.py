@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from .models import Guitars
 from .forms import Guitarsform, GuitarsSearchForm
 
@@ -24,6 +25,7 @@ def show_guitars(request):
 #         'all_guitars':all_guitars,
 #     })    
 
+@login_required
 def create_guitars(request):
     if request.method == 'POST':
         create_guitars_form = Guitarsform(request.POST)
@@ -37,7 +39,7 @@ def create_guitars(request):
         'form':create_guitars_form
     })
     
-
+@login_required
 def update_guitars(request, guitar_id):
     guitars_being_updated = get_object_or_404(Guitars, pk=guitar_id)
     if request.method == "POST":
@@ -50,14 +52,15 @@ def update_guitars(request, guitar_id):
     return render(request, 'update_guitars.html',{
         'form':update_guitars_form
     })
-    
+
+@login_required    
 def confirm_delete_guitar(request, guitar_id):
     guitar_being_deleted = get_object_or_404(Guitars, pk=guitar_id)
     return render(request, 'confirm_delete_guitar.html', {
         'guitar':guitar_being_deleted
     })
     
-
+@login_required
 def actually_delete_guitar(request, guitar_id):
     guitar_being_deleted = get_object_or_404(Guitars, pk=guitar_id)
     guitar_being_deleted.delete()
