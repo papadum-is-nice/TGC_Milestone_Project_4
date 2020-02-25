@@ -55,9 +55,16 @@
           </li>
         </ul>
         <div class="dropdown">
+          {% if user.is_authenticated %}
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user.username}}
+        </button>
+        {% endif %}
+        {% if not user.is_authenticated %}
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           User
         </button>
+        {% endif %}
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li class="nav-item">
               {% if not user.is_authenticated %}
@@ -66,7 +73,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
-            {% endif %} {% if user.is_authenticated %}
+            {% endif %} 
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'profile' %}">Profile</a>
             </li>

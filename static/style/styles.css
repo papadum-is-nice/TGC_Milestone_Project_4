@@ -212,6 +212,7 @@
 }
 
 /*empty cart*/
+
 .empty_cart h2 {
 	margin: 0 auto;
 	margin-top: 10rem;
@@ -224,68 +225,124 @@
 }
 
 /*Signup page*/
+
 .signup_form {
-    width: 80%;
-    height: 800px;
+	width: 80%;
+	height: 800px;
 	border: 2px solid black;
 	border-radius: 25px;
 	box-shadow: 2px 2px 8px grey;
 	margin: 8rem auto;
-	padding: 30px;	
+	padding: 30px;
 }
 
 .signup_form .signup_btn {
-    width: 100%;
+	width: 100%;
 }
 
 /*profile page*/
+
 .profile {
-    width: 80%;
-    height: 300px;
+	width: 80%;
+	height: 300px;
 	border: 2px solid black;
 	border-radius: 25px;
 	box-shadow: 2px 2px 8px grey;
 	margin: 8rem auto;
-	padding: 30px;	
+	padding: 30px;
+}
+
+.logout {
+	width: 80%;
+	height: 300px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 8rem auto;
+	padding: 30px;
 }
 
 /*login page*/
+
 .login_form {
-    width: 80%;
-    height: 400px;
+	width: 80%;
+	height: 400px;
 	border: 2px solid black;
 	border-radius: 25px;
 	box-shadow: 2px 2px 8px grey;
 	margin: 8rem auto;
-	padding: 30px;	
+	padding: 30px;
 }
 
 .login_form .login_btn {
 	width: 100%;
-    margin: 1rem auto;
+	margin: 1rem auto;
 }
 
 /*forgot password page*/
+
 .password_reset_form {
-    width: 80%;
-    height: 400px;
+	width: 80%;
+	height: 400px;
 	border: 2px solid black;
 	border-radius: 25px;
 	box-shadow: 2px 2px 8px grey;
 	margin: 8rem auto;
-	padding: 30px;	
+	padding: 30px;
 }
 
 .password_reset_form input {
 	border: 1px solid black;
-    /* margin-left: 5px; */
-    width: 100%;
+	/* margin-left: 5px; */
+	width: 100%;
 }
 
 .password_reset_form .password_reset_btn {
 	/*width: 100%;*/
-    margin: 1rem auto;
-    border: none;
+	margin: 1rem auto;
+	border: none;
+}
+
+/*sell guitar page*/
+
+.sellguitar img {
+	width: 100%;
+	/*margin-top: 2rem;*/
+}
+
+.sellguitar_form {
+	width: 80%;
+	height: 950px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 2rem auto;
+	padding: 30px;
+}
+
+.sellguitar_form .submit_btn {
+	width: 100%;
+}
+
+.sell_cond {
+	text-align: center;
+	margin: 2rem;
+	margin-bottom: 3rem;
+}
+
+/*update guitar page*/
+.update_guitars {
+	width: 80%;
+	height: 1050px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 2rem auto;
+	padding: 30px;
+}
+
+.update_guitars .submit_btn {
+	width: 100%;
 }
 
 @media (min-width: 320px) and (max-width: 575px) {
@@ -322,25 +379,30 @@
 	.about_us {
 		margin: 4rem;
 	}
-	
+
 	.profile {
 		width: 50%;
-    	height: 600px;
+		height: 600px;
 	}
-	
+
+	.logout {
+		width: 50%;
+		height: 600px;
+	}
+
 	.login_form {
-    width: 50%;
-    height: 900px;
-}
+		width: 50%;
+		height: 900px;
+	}
 
 	.password_reset_form {
-	    width: 50%;
-	    height: 900px;
+		width: 50%;
+		height: 900px;
 	}
-	
+
 	.empty_img img {
-	margin-bottom: 30rem;
-}
+		margin-bottom: 30rem;
+	}
 
 }
 
@@ -348,20 +410,43 @@
 	.about_us {
 		margin: 6rem;
 	}
-	
+
 	.profile {
-	width: 50%;
-	height: 1000px;
+		width: 50%;
+		height: 1000px;
+	}
+
+	.logout {
+		width: 50%;
+		height: 1000px;
+	}
+	
+	.sellguitar .sell_img {
+		text-align: center;
+		margin: 1rem auto;
+	}
+	
+	.sellguitar img {
+		width: 50%;
+	}
+	
+	.sellguitar_form {
+		width: 60%;
+	}
+
+	.update_guitars {
+		/*width: 50%;*/
+		height: 1150px;
 	}
 	
 	.signup_form {
-    width: 80%;
-    height: 950px;
-}
+		width: 80%;
+		height: 950px;
+	}
 
 	.empty_img img {
-	margin-bottom: 49rem;
-}
+		margin-bottom: 49rem;
+	}
 
 }
 

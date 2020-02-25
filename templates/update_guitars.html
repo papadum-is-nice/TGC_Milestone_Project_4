@@ -4,13 +4,14 @@
 
 {% block content %}
 
-<h1>Update Guitars</h1>
+<div class="update_guitars">
+<h2>Update Guitars</h2>
 {{ form.media }}
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy}}
-        <input type='submit' value='Update'/>
+        <input type='submit' value='Update' class="btn btn-success submit_btn"/>
     </form>
-
+</div>
 
 {% endblock %}
