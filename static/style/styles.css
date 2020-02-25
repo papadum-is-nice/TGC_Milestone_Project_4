@@ -145,6 +145,11 @@
 	color: black;
 }
 
+/*homepage*/
+.list-group a {
+	color: black;
+	border: 1px solid black;
+}
 
 .cart .card img {
 	width: 50%;
