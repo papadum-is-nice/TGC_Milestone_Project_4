@@ -211,6 +211,22 @@
 	margin-bottom: 4rem;
 }
 
+/*login page*/
+.login_form {
+    width: 80%;
+    height: 400px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 8rem auto;
+	padding: 30px;	
+}
+
+.login_form .login_btn {
+	width: 100%;
+    margin: 1rem auto;
+}
+
 @media (min-width: 320px) and (max-width: 575px) {
 	.navbar input {
 		width: 80%;
@@ -245,6 +261,14 @@
 	.about_us {
 		margin: 4rem;
 	}
+	
+	.login_form {
+    width: 50%;
+    height: 900px;
+	margin: 8rem auto;
+	padding: 30px;	
+}
+
 }
 
 @media (min-width: 1024px) {

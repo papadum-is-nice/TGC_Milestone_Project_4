@@ -11,7 +11,7 @@
           </div>
           <div class="card-content">
             <p>{{guitar.brand}}</p>
-            <p>${{guitar.cost}}</p>
+            <p>${{guitar.cost|floatformat:2}}</p>
             <form class="form-inline" method="post" action="{% url 'adjust_cart' guitar_id=guitar.id %}">
               {% csrf_token %}
               <div class="form-group">

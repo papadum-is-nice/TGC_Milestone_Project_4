@@ -1,7 +1,10 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
 
+{% block content %}
 
-    <div class="login">
+{% load crispy_forms_tags %} 
+
+    <div class="login_form">
         {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
         {% endif %} {% if next %} {% if user.is_authenticated %}
@@ -12,6 +15,7 @@
 
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
+            {{ form|crispy }}
             <table>
                 <tr>
                     <td>{{ form.username.label_tag }}</td>
@@ -23,7 +27,7 @@
                 </tr>
             </table>
 
-            <input type="submit" value="login">
+            <input type="submit" value="login" class="btn btn-success login_btn">
             <input type="hidden" name="next" value="{{ next }}">
         </form>
 
