@@ -18,11 +18,11 @@ def show_guitars(request):
         # 'search_form':form,
     })
     
-def guitar_info(request):
-    all_guitars = Guitars.objects.all()
-    return render(request, 'guitar_info.html', {
-        'all_guitars':all_guitars,
-    })    
+# def guitar_info(request):
+#     all_guitars = Guitars.objects.all()
+#     return render(request, 'guitar_info.html', {
+#         'all_guitars':all_guitars,
+#     })    
 
 def create_guitars(request):
     if request.method == 'POST':

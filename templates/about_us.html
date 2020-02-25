@@ -1,9 +1,12 @@
-{% extends 'base.html' %} {%block content %}
+{% extends 'base.html' %} 
 
-<div class="container-fluid aboutus">
-    <div class="container">
-        <img src="/static/images/Shop.jpg" alt="">
-    </div>
+{% load static %} 
+
+{%block content %}
+
+    <div class="about_us">
+        <img src="{% static 'images/Shop.jpg' %}" alt="">
+    
     <h1>About Us</h1>
     <p>Since the humble beginnings of Jimbo Guitars nearly 6 years ago we have worked hard to maintain the high standard of trust and integrity that has enabled us to continue to be a frontrunner in the S.E Asia vintage guitar market. Our goal is to succeed
         at a business level while creating an atmosphere that dignifies our customers and our team of professionals. The ownership and staff remain aware of the ever-changing landscape of music, technology and the economy. With this in mind Jimbo Guitars
@@ -22,5 +25,5 @@
 
     <h1>Store Hours</h1>
     <p>Monday - Saturday: 10:00 am to 8:00 pm <br>CLOSED On Sundays</p </div>
-
+    </div>
     {%endblock%}
