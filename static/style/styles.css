@@ -303,6 +303,13 @@
 	border: none;
 }
 
+/*password reset done page*/
+.password_reset_done {
+	margin: 2rem;
+	margin-top: 5rem;
+    margin-bottom: 25rem;
+}
+
 /*sell guitar page*/
 
 .sellguitar img {
@@ -343,6 +350,17 @@
 
 .update_guitars .submit_btn {
 	width: 100%;
+}
+
+/*confirm delete guitar page */
+.confirm_delete {
+	width: 80%;
+	height: 1050px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 2rem auto;
+	padding: 30px;
 }
 
 @media (min-width: 320px) and (max-width: 575px) {
@@ -399,6 +417,10 @@
 		width: 50%;
 		height: 900px;
 	}
+	
+	.password_reset_done {
+		margin-bottom: 40rem;
+	}
 
 	.empty_img img {
 		margin-bottom: 30rem;
@@ -421,6 +443,11 @@
 		height: 1000px;
 	}
 	
+	.password_reset_done {
+	margin-bottom: 65rem;
+	}
+
+	
 	.sellguitar .sell_img {
 		text-align: center;
 		margin: 1rem auto;
@@ -436,6 +463,10 @@
 
 	.update_guitars {
 		/*width: 50%;*/
+		height: 1150px;
+	}
+	
+	.confirm_delete {
 		height: 1150px;
 	}
 	
