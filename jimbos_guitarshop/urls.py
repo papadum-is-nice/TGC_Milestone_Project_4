@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import home,  about_us
 from users.views import signup, profile
-from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
+from guitars.views import show_guitars, guitar_info, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
 from cart.views import add_to_cart, view_cart, remove_from_cart, adjust_cart
 from checkout.views import checkout, checkout_success, checkout_cancelled, payment_completed
 
@@ -26,6 +26,7 @@ urlpatterns = [
     path('', home, name="home"),
     path('about_us/', about_us, name="about_us"),
     path('show_guitars/', show_guitars, name="show_guitars"),
+    path('guitar_info/', guitar_info, name="guitar_info"),
     path('create_guitars/', create_guitars, name="create_guitars"),
     path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
     path('confirm_delete_guitar/<guitar_id>', confirm_delete_guitar, name="confirm_delete_guitar"),

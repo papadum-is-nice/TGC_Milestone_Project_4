@@ -19,7 +19,6 @@
 *********************************************/
 
 .product{
-	border: 1px solid #dddddd;
 	height: 321px;
 }
 
@@ -135,7 +134,7 @@
 }
 
 .service-image-left > center > img,.service-image-right > center > img{
-	max-height: 155px;
+	max-height: 300px;
 }
 
 
@@ -172,10 +171,22 @@
 	margin-top: 10rem;
 }
 
+.aboutus img {
+	width: 100%;
+}
+
 .sellguitar {
 	margin-top: 10rem;
 }
 
 .sell_cond{
 	margin-top: 5rem;
+}
+
+.cart {
+	margin-top: 10rem;
+}
+
+.cart .card img {
+	width: 50%;
 }

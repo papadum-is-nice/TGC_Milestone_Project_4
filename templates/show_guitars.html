@@ -1,9 +1,10 @@
-{% extends "base.html" %} {% block content %} {% load crispy_forms_tags %}
+{% extends "base.html" %} {% block content %} 
+<!--{% load crispy_forms_tags %}-->
 <div class="container-fluid showguitar">
-<form method='GET'>
-	{{ search_form|crispy}}
-	<input type='submit' value='Search' />
-</form>
+<!--<form method='GET'>-->
+<!--	{{ search_form|crispy}}-->
+<!--	<input type='submit' value='Search' />-->
+<!--</form>-->
 </div>
 
 <div class="container-fluid">
@@ -32,11 +33,11 @@
 					<div class="product-price">${{guitar.cost}}</div>
 					<div class="product-stock">In Stock</div>
 					<hr>
-					<div class="btn-group cart">
+					<div class="btn-group">
 						<a href="{% url 'add_to_cart' guitar_id=guitar.id %}" class="btn btn-success">Add to Cart</a>
-						<a href="{% url 'update_guitar' guitar_id=guitar.id %}" class="btn btn-primary">Edit</a>
+						<a href="{% url 'update_guitar' guitar_id=guitar.id %}" class="btn btn-primary ml-1">Edit</a>
 					</div>
-					<div class="btn-group wishlist">
+					<div class="btn-group">
 						<a href="{% url 'confirm_delete_guitar' guitar_id=guitar.id %}" class="btn btn-danger">Delete</a>
 					</div>
 				</div>

@@ -1,24 +1,32 @@
 {% extends 'base.html' %} {%block content %}
-<h1>Your Cart</h1>
-<ul>
-    {%for id,guitar in shopping_cart.items %}
-    <li>
-        <img src="{{guitar.image_url}}" /> {{guitar.brand}} ${{guitar.cost}}
 
-        <form class="form-inline" method="post" action="{% url 'adjust_cart' guitar_id=guitar.id %}">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="exampleInputAmount" class="sr-only">New Qty</label>
-                <div class="input-group">
-                    <!--&nbsp;-->
-                    <!--<div class="container"></div>-->
-                    <div class="input-group-addon cart_div">Quantity to change to:&nbsp&nbsp&nbsp</div>
-                    <input name="quantity" type="number" min="1" max="10" class="form-control" id="input_width" value="{{guitar.quantity}}">
+<div class="cart">
+    <h1>Your Cart</h1>
+    
+    {%for id,guitar in shopping_cart.items %}
+    
+    <div class="card" style="width: 18rem;">
+        <img src="{{guitar.image_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{guitar.brand}}</h5>
+            <p class="card-text">${{guitar.cost}}</p>
+            <form class="form-inline" method="post" action="{% url 'adjust_cart' guitar_id=guitar.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                    <div class="input-group">
+                        <div class="input-group-addon cart_div">Quantity:&nbsp&nbsp&nbsp</div>
+                        <input name="quantity" type="number" min="1" max="10" class="form-control" id="input_width" value="{{guitar.quantity}}">
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="btn btn-primary" id="cart_btn_primary_id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; Apply</button>
-        </form>
-    </li>
-    <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}">Remove from Cart</a> {%endfor%}
-</ul>
-<a href="{% url 'checkout' %}" class="btn btn-success">CHECKOUT</a> {%endblock %}
+                <button type="submit" class="btn btn-primary ml-1" id="cart_btn_primary_id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; Apply</button>
+            </form>
+
+            <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}" class="btn btn-danger mt-1">Remove from Cart</a> 
+        </div>
+    </div>
+    {%endfor%}
+            <a href="{% url 'checkout' %}" class="btn btn-success">CHECKOUT</a>
+</div>
+
+{%endblock %}
