@@ -179,8 +179,9 @@
 /*cart page*/
 
 .guitar_cart .card {
-	margin: 4rem 2rem;
-	border: none;
+	margin: 2rem 2rem;
+	padding: 10px;
+	border: 1px solid black;
 }
 
 .guitar_cart .card-image {
