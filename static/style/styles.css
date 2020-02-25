@@ -151,9 +151,20 @@
 	border: 1px solid black;
 }
 
-.cart .card img {
-	width: 50%;
+.guitar_shop .card  {
+	margin: 1rem;
+	border: none;
 }
+
+
+.guitar_shop .card img {
+	max-width: 170px;
+	/*margin-left: 3.5rem;*/
+}
+
+/*.cart .card img {*/
+/*	width: 50%;*/
+/*}*/
 
 
 
@@ -165,3 +176,17 @@
     	margin-left: 5px;
     }
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+	.guitar_shop .card img {
+		margin-left: 3.5rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.guitar_shop .card  {
+		margin: 4rem;
+		/*border: none;*/
+	}
+}
+
