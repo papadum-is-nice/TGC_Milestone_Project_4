@@ -1,7 +1,20 @@
-{% extends 'base.html' %} {%block content %}
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{%block content %}
 
 <div class="cart">
   <div class="guitar_cart">
+        {%for id,guitar in shopping_cart.items  %} 
+    {% empty %}
+    <div class="row empty_cart">
+        <h2>Your Cart is empty</h2>
+    </div>
+    <div class="row empty_img">
+        <img src="{% static 'images/empty_cart.png' %}" id="empty_img" alt="Empty shopping cart" />
+    </div>    
+    {% endfor %}
     <div class="row">
       {%for id,guitar in shopping_cart.items %}
       <div class="col-md-6 col-lg-4">
@@ -32,6 +45,6 @@
       {% endfor %}
     </div>
     <div class="checkout_btn">
-  <a href="{% url 'checkout' %}" class="btn btn-success">CHECKOUT</a> {%endblock %}
+  <a href="{% url 'checkout' %}" id="checkout" class="btn btn-success">CHECKOUT</a> {%endblock %}
   </div>
   </div>

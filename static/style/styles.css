@@ -211,6 +211,18 @@
 	margin-bottom: 4rem;
 }
 
+/*empty cart*/
+.empty_cart h2 {
+	margin: 0 auto;
+	margin-top: 10rem;
+}
+
+.empty_img img {
+	width: 12rem;
+	margin: 0 auto;
+	margin-bottom: 15rem;
+}
+
 /*Signup page*/
 .signup_form {
     width: 80%;
@@ -309,6 +321,10 @@
 	    width: 50%;
 	    height: 900px;
 	}
+	
+	.empty_img img {
+	margin-bottom: 30rem;
+}
 
 }
 
@@ -320,6 +336,10 @@
 	.signup_form {
     width: 80%;
     height: 950px;
+}
+
+	.empty_img img {
+	margin-bottom: 49rem;
 }
 
 }

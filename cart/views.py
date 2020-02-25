@@ -23,8 +23,8 @@ def add_to_cart(request, guitar_id):
         # save the cart back to sessions
         request.session['shopping_cart'] = cart
         messages.success(request, "Guitar has been added to your cart!")
-    else:
-        messages.success(request, "The guitar is already in your shopping cart")
+    # else:
+    #     messages.success(request, "The guitar is already in your shopping cart")
     return redirect('/show_guitars/')
         
 
