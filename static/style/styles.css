@@ -139,54 +139,24 @@
 
 
 /* Jimbo's*/
-.signup {
-	margin-top: 10rem;
+
+/*navbar*/
+.dropdown-menu a {
+	color: black;
 }
 
-.login {
-	margin-top: 10rem;
-}
-
-.profile {
-	margin-top: 10rem;
-}
-
-.logout {
-	margin-top: 10rem;
-}
-
-.password_reset_form {
-	margin-top: 10rem;
-}
-
-.password_reset_done {
-	margin-top: 10rem;
-}
-
-.showguitar {
-	margin-top: 10rem;
-}
-
-.aboutus {
-	margin-top: 10rem;
-}
-
-.aboutus img {
-	width: 100%;
-}
-
-.sellguitar {
-	margin-top: 10rem;
-}
-
-.sell_cond{
-	margin-top: 5rem;
-}
-
-.cart {
-	margin-top: 10rem;
-}
 
 .cart .card img {
 	width: 50%;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .navbar input {
+        width: 80%;
+    }
+    .navbar .search_button {
+    	margin-left: 5px;
+    }
 }

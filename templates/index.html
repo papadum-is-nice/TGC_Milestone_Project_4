@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <div class="container-fluid">
-  <hr> {% if messages %}
+   {% if messages %}
   <div class="alert alert-success" role="alert">
     <div>
       {% for message in messages %} {{ message }} {% endfor %}
