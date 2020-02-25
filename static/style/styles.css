@@ -211,6 +211,21 @@
 	margin-bottom: 4rem;
 }
 
+/*Signup page*/
+.signup_form {
+    width: 80%;
+    height: 800px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 8rem auto;
+	padding: 30px;	
+}
+
+.signup_form .signup_btn {
+    width: 100%;
+}
+
 /*login page*/
 .login_form {
     width: 80%;
@@ -293,8 +308,6 @@
 	.password_reset_form {
 	    width: 50%;
 	    height: 900px;
-		margin: 8rem auto;
-		padding: 30px;	
 	}
 
 }
@@ -303,6 +316,11 @@
 	.about_us {
 		margin: 6rem;
 	}
+	
+	.signup_form {
+    width: 80%;
+    height: 950px;
+}
 
 }
 
