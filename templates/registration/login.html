@@ -5,6 +5,7 @@
 {% load crispy_forms_tags %} 
 
     <div class="login_form">
+        <h2>Login</h2>
         {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
         {% endif %} {% if next %} {% if user.is_authenticated %}

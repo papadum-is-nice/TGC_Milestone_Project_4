@@ -238,6 +238,17 @@
     width: 100%;
 }
 
+/*profile page*/
+.profile {
+    width: 80%;
+    height: 300px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 8rem auto;
+	padding: 30px;	
+}
+
 /*login page*/
 .login_form {
     width: 80%;
@@ -312,6 +323,11 @@
 		margin: 4rem;
 	}
 	
+	.profile {
+		width: 50%;
+    	height: 600px;
+	}
+	
 	.login_form {
     width: 50%;
     height: 900px;
@@ -331,6 +347,11 @@
 @media (min-width: 1024px) {
 	.about_us {
 		margin: 6rem;
+	}
+	
+	.profile {
+	width: 50%;
+	height: 1000px;
 	}
 	
 	.signup_form {
