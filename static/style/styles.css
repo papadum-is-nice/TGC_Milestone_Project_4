@@ -227,6 +227,29 @@
     margin: 1rem auto;
 }
 
+/*forgot password page*/
+.password_reset_form {
+    width: 80%;
+    height: 400px;
+	border: 2px solid black;
+	border-radius: 25px;
+	box-shadow: 2px 2px 8px grey;
+	margin: 8rem auto;
+	padding: 30px;	
+}
+
+.password_reset_form input {
+	border: 1px solid black;
+    /* margin-left: 5px; */
+    width: 100%;
+}
+
+.password_reset_form .password_reset_btn {
+	/*width: 100%;*/
+    margin: 1rem auto;
+    border: none;
+}
+
 @media (min-width: 320px) and (max-width: 575px) {
 	.navbar input {
 		width: 80%;
@@ -265,9 +288,14 @@
 	.login_form {
     width: 50%;
     height: 900px;
-	margin: 8rem auto;
-	padding: 30px;	
 }
+
+	.password_reset_form {
+	    width: 50%;
+	    height: 900px;
+		margin: 8rem auto;
+		padding: 30px;	
+	}
 
 }
 
