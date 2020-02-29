@@ -36,7 +36,7 @@ def view_cart(request):
     
     for guitar_id,guitar in cart.items():
         total_price += int(guitar['quantity']) * int(float(guitar['cost']))
-    print(total_price)
+    # print(total_price)
     
     return render(request, 'view_cart.html', {
         'shopping_cart':cart,
