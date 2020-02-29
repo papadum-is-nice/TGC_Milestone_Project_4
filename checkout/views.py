@@ -1,12 +1,13 @@
 from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from guitars.models import Guitars
 import stripe
 
 endpoint_secret = "whsec_hEvKOilMog4Q4oPdUlmk7kUdrmPz42DH"
 
+@login_required
 def checkout(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
 

@@ -147,6 +147,10 @@
 	color: black;
 }
 
+
+/*Scroll to Top*/
+
+
 /*homepage*/
 
 .list-group a {
@@ -451,7 +455,12 @@
 
 	.logout {
 		width: 50%;
-		height: 1000px;
+		height: 600px;
+	}
+	
+	#logout {
+		width: 100%;
+		height: 60%;
 	}
 	
 	.password_reset_done {
@@ -500,3 +509,6 @@
 		margin-left: 8rem;
 	}
 }
+
+
+
