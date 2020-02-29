@@ -24,7 +24,6 @@ def add_to_cart(request, guitar_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "Guitar has been added to your cart!")
     else:
-        cart['guitar_id']['cost'] = int(cart[guitar_id]['quantity']) * int(cart[guitar_id]['cost'])
         messages.success(request, "The guitar is already in your shopping cart")
     return redirect('/show_guitars/')
         
@@ -32,15 +31,8 @@ def add_to_cart(request, guitar_id):
 def view_cart(request):
     # retrieve the cart
     cart = request.session.get('shopping_cart', {})
-    total_price = 0.00
-    
-    for guitar_id,guitar in cart.items():
-        total_price += int(guitar['quantity']) * int(float(guitar['cost']))
-    # print(total_price)
-    
     return render(request, 'view_cart.html', {
-        'shopping_cart':cart,
-        'total_price':total_price
+        'shopping_cart':cart
     })
 
 def remove_from_cart(request, guitar_id):
@@ -53,6 +45,7 @@ def remove_from_cart(request, guitar_id):
         return redirect('/cart/') 
         
 def adjust_cart(request, guitar_id):
+    # print(request.POST)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('shopping_cart', {})
 
@@ -62,4 +55,4 @@ def adjust_cart(request, guitar_id):
         cart.pop(id)
     
     request.session['shopping_cart'] = cart
-    return redirect(reverse('view_cart'))        
+    return redirect(reverse('view_cart')) 

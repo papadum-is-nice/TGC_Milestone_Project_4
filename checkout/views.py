@@ -9,13 +9,11 @@ import stripe
 endpoint_secret = "whsec_hEvKOilMog4Q4oPdUlmk7kUdrmPz42DH"
 
 @login_required
-def shipping_form(request):
-
-    return render(request, 'shipping_form.html', {
+def place_order(request):
+    return render(request, 'place_order.html', {
         'order_form':OrderForm
     })
-
-@login_required
+    
 def checkout(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -77,5 +75,3 @@ def payment_completed(request):
   
 def handle_checkout_session(session):
      print(session)
-     
-     
