@@ -37,12 +37,19 @@
               <button type="submit" class="btn btn-primary ml-2 apply_btn" id="cart_btn_primary_id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; Apply</button>
             </form>
           </div>
+          <!--<div class="row">-->
+          <!--  <p>Subtotal: ${{guitar.subtotal}}</p>-->
+          <!--</div>-->
           <div class="row">
             <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}" class="btn btn-danger mt-1 remove_btn">Remove from Cart</a>
           </div>
         </div>
       </div>
       {% endfor %}
+    </div>
+    
+    <div class="total_price">
+      <p>Total Price: ${{total_price|floatformat:2}}</p>
     </div>
     <div class="checkout_btn">
   <a href="{% url 'checkout' %}" id="checkout" class="btn btn-success">CHECKOUT</a> {%endblock %}

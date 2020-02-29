@@ -222,6 +222,13 @@
 	margin-bottom: 4rem;
 }
 
+.total_price {
+text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
 /*empty cart*/
 
 .empty_cart h2 {
