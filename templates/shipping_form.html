@@ -7,6 +7,7 @@
 <div class="shipping_form">
     <!--<h1>hi</h1>-->
     <form method='POST'>
+        <h4>Please provide your shipping details</h4>
         {% csrf_token %} 
         {{ order_form|crispy}}
         <a href="{% url 'checkout' %}" id="checkout" class="btn btn-success mt-4">CHECKOUT</a> 
