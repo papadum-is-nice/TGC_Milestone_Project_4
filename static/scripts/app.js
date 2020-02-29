@@ -1,6 +1,6 @@
 let empty_img = document.querySelector("#empty_img");
-let checkout = document.querySelector('#checkout');
+let place_order = document.querySelector('#place_order')
 
 if (empty_img) {
-    checkout.style.display = "none";
+    place_order.style.display="none";
 }

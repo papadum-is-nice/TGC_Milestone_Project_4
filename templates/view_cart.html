@@ -47,10 +47,10 @@
     </div>
     
     <div class="total_price">
-      <!--<p>Total Price: $total_price|floatformat:2</p>-->
+      <p>Total Price: ${{total_price|floatformat:2 }}</p>
     </div>
     <div class="checkout_btn">
-      <a href="{% url 'place_order' %}" class="btn btn-success">PLACE ORDER</a> 
+      <a href="{% url 'place_order' %}" class="btn btn-success" id="place_order">PLACE ORDER</a> 
   {% endblock %}
   </div>
   </div>

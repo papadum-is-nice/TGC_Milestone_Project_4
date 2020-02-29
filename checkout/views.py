@@ -68,9 +68,8 @@ def payment_completed(request):
 
   if event['type'] == 'checkout.session.completed':
     session = event['data']['object']
-
     handle_checkout_session(session)
-
+    request.session['shopping_cart'] = {}
   return HttpResponse(status=200)
   
 def handle_checkout_session(session):
