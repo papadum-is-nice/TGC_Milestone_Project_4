@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
@@ -33,7 +33,7 @@ def checkout(request):
     session = stripe.checkout.Session.create(
         payment_method_types=['card'],
         line_items=line_items,
-        success_url=request.build_absolute_uri(reverse('home')),
+        success_url=request.build_absolute_uri(reverse(checkout_success)),
         cancel_url=request.build_absolute_uri(reverse('home')),
         payment_intent_data={
             'capture_method':'manual'
@@ -46,7 +46,8 @@ def checkout(request):
     
 def checkout_success(request):
     request.session['shopping_cart'] = {}
-    return HttpResponse("Checkout success")
+    return redirect('/')
+    # return HttpResponse("Checkout success")
     
 def checkout_cancelled(request):
     return HttpResponse("Checkout cancelled")
