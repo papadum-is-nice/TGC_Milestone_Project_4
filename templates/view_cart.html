@@ -52,6 +52,8 @@
       <p>Total Price: ${{total_price|floatformat:2}}</p>
     </div>
     <div class="checkout_btn">
-  <a href="{% url 'checkout' %}" id="checkout" class="btn btn-success">CHECKOUT</a> {%endblock %}
+      <a href="{% url 'shipping_form' %}" id="charge" class="btn btn-success">SHIPPING FORM</a> 
+  <!--<a href="url 'checkout' " id="checkout" class="btn btn-success">CHECKOUT</a> -->
+  {% endblock %}
   </div>
   </div>

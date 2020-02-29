@@ -3,9 +3,17 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from guitars.models import Guitars
+from .forms import OrderForm
 import stripe
 
 endpoint_secret = "whsec_hEvKOilMog4Q4oPdUlmk7kUdrmPz42DH"
+
+@login_required
+def shipping_form(request):
+
+    return render(request, 'shipping_form.html', {
+        'order_form':OrderForm
+    })
 
 @login_required
 def checkout(request):

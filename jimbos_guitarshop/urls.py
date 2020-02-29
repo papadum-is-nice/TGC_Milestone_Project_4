@@ -19,14 +19,13 @@ from home.views import home,  about_us
 from users.views import signup, profile
 from guitars.views import show_guitars, create_guitars, update_guitars, confirm_delete_guitar, actually_delete_guitar
 from cart.views import add_to_cart, view_cart, remove_from_cart, adjust_cart
-from checkout.views import checkout, checkout_success, checkout_cancelled, payment_completed
+from checkout.views import shipping_form, checkout, checkout_success, checkout_cancelled, payment_completed
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home"),
     path('about_us/', about_us, name="about_us"),
     path('show_guitars/', show_guitars, name="show_guitars"),
-    # path('guitar_info/', guitar_info, name="guitar_info"),
     path('create_guitars/', create_guitars, name="create_guitars"),
     path('update_guitars/<guitar_id>', update_guitars, name="update_guitar"),
     path('confirm_delete_guitar/<guitar_id>', confirm_delete_guitar, name="confirm_delete_guitar"),
@@ -38,6 +37,7 @@ urlpatterns = [
     path('add_to_cart/<guitar_id>', add_to_cart, name="add_to_cart"),
     path('adjust_cart/<guitar_id>', adjust_cart, name='adjust_cart'),
     path('remove/<guitar_id>', remove_from_cart, name="remove_from_cart"),
+    path('shipping_form/', shipping_form, name="shipping_form"),
     path('checkout/', checkout, name='checkout'),
     path('success/', checkout_success),
     path('cancelled/', checkout_cancelled),

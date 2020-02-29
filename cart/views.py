@@ -18,7 +18,6 @@ def add_to_cart(request, guitar_id):
             'cost': str(guitar.cost),
             'quantity':1,
             'image_url':guitar.image.cdn_url,
-            # 'subtotal':float(guitar.cost)
         }
         
         # save the cart back to sessions
@@ -44,24 +43,6 @@ def view_cart(request):
         'total_price':total_price
     })
 
-# def total_price(request, guitar_id):
-#     guitar = get_object_or_404(Guitars, pk=guitar_id)
-#     cart = request.session.get('shopping_cart', {})
-#     cart[guitar_id] = {
-#     # 'id':guitar_id,
-#     # 'name': game.name,
-#     # 'price': str(game.price),
-#     # 'image_url':game.image.cdn_url,
-#     'quantity':cart['quantity'],
-#     'total_price':int(cart[guitar_id]['quantity']) * float(cart[guitar_id]['price'])
-#     }
-    
-#     # print(quantity)
-#     request.session['shopping_cart'] = cart
-#     return render(request, 'view_cart.html', {
-#             'total_price':total_price
-#         }) 
-        
 def remove_from_cart(request, guitar_id):
     cart = request.session.get('shopping_cart', {})
     
