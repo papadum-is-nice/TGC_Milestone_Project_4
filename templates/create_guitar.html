@@ -1,25 +1,23 @@
-{% extends "base.html" %} {% load crispy_forms_tags %} {% block content %}
+{% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block content %}
 
 <div class="sellguitar">
-    <!--<h2>List your guitar for sale</h2>-->
     <div class="container sell_img">
-        <img src="/static/images/Sell.jpg" alt="">
+        <img src="{% static 'images/Sell.jpg' %}" alt="Sell">
     </div>
-    
+
     <div class="sellguitar_form">
-    {{ form.media }}
-    <form method='POST' enctype="multipart/form-data">
-        {% csrf_token %} {{ form|crispy}}
-        <input type='submit' value='Submit Listing' class="btn btn-success submit_btn"/>
-    </form>
+        {{ form.media }}
+        <form method='POST' enctype="multipart/form-data">
+            {% csrf_token %} {{ form|crispy}}
+            <input type='submit' value='Submit Listing' class="btn btn-success submit_btn" />
+        </form>
     </div>
 </div>
 
 <div class="sell_cond">
     <h3>List for Free in Minutes</h3>
     <p>List as many items as you want for free. If they sell, our selling fee is only 3% - no matter what.
-    <br>
-    Every transaction is safe, secure, and supported by real human beings.</p>
+        <br> Every transaction is safe, secure, and supported by real human beings.</p>
 </div>
 
 {% endblock %}

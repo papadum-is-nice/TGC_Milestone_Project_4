@@ -25,7 +25,7 @@ def checkout(request):
         guitars = get_object_or_404(Guitars, pk=id)
         line_items.append({
             'name': guitars.brand,
-            'amount': int(guitars.cost*100), #convert to cents, in integer
+            'amount': int(guitars.cost*100),
             'currency':'sgd',
             'quantity':guitar['quantity']
         })
@@ -47,7 +47,6 @@ def checkout(request):
 def checkout_success(request):
     request.session['shopping_cart'] = {}
     return redirect('/')
-    # return HttpResponse("Checkout success")
     
 def checkout_cancelled(request):
     return HttpResponse("Checkout cancelled")

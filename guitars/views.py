@@ -10,21 +10,10 @@ def show_guitars(request):
     # form = GuitarsSearchForm()
     if request.GET.get('search_terms'):
         all_guitars = all_guitars.filter(Q(brand__icontains=request.GET.get('search_terms'))|Q(model__icontains=request.GET.get('search_terms'))|Q(gtype__name__icontains=request.GET.get('search_terms'))|Q(desc__icontains=request.GET.get('search_terms')))
-    # if request.GET.get('min_cost'):
-    #     all_guitars = all_guitars.filter(cost__gte=request.GET.get('min_cost'))
-    # if request.GET.get('max_cost'):
-    #     all_guitars = all_guitars.filter(cost__lte=request.GET.get('max_cost'))
     return render(request, 'show_guitars.html', {
         'all_guitars':all_guitars,
-        # 'search_form':form,
     })
     
-# def guitar_info(request):
-#     all_guitars = Guitars.objects.all()
-#     return render(request, 'guitar_info.html', {
-#         'all_guitars':all_guitars,
-#     })    
-
 @login_required
 def create_guitars(request):
     if request.method == 'POST':

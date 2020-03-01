@@ -2,7 +2,6 @@ from .models import Charge
 from django import forms
 from django_countries.fields import CountryField
 
-# 'shipping form' for user before making payment
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Charge

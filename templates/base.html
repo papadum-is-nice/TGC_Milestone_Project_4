@@ -18,8 +18,6 @@
 </head>
 
 <body>
-
-  <!--<div class="container-fluid">-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <img class="nav-item" src="/static/images/JG logo.png" alt="#"></a>
     <a class="navbar-brand" href="{% url 'home' %}">Jimbo Guitars</a>
@@ -28,10 +26,6 @@
       </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <!--<form class="form-inline my-2 my-lg-0" method='GET'>-->
-        <!--  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
-        <!--  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>-->
-        <!--</form>-->
         <form method="GET" class="form-inline" action="{% url 'show_guitars' %}">
           <input name="search_terms" class="form-control mr-sm-2" type="search" placeholder="Search for Guitars">
           <button class="btn btn-outline-light search_button" type="submit"><i class="fas fa-search"></i></button>
@@ -82,7 +76,6 @@
       </div>
     </div>
   </nav>
-  <!--</div>-->
 
   <div class="container-fluid">
     {% if messages %}

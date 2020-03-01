@@ -1,7 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
 
-# Create your models here.
 class Charge(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     street_address1 = models.CharField(max_length=40, blank=False)

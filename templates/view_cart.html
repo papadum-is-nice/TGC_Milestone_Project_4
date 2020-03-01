@@ -1,19 +1,14 @@
-{% extends 'base.html' %} 
-
-{% load static %}
-
-{%block content %}
+{% extends 'base.html' %} {% load static %} {%block content %}
 
 <div class="cart">
   <div class="guitar_cart">
-        {%for id,guitar in shopping_cart.items  %} 
-    {% empty %}
+    {%for id,guitar in shopping_cart.items %} {% empty %}
     <div class="row empty_cart">
-        <h2>Your Cart is empty</h2>
+      <h2>Your Cart is empty</h2>
     </div>
     <div class="row empty_img">
-        <img src="{% static 'images/empty_cart.png' %}" id="empty_img" alt="Empty shopping cart" />
-    </div>    
+      <img src="{% static 'images/empty_cart.png' %}" id="empty_img" alt="Empty shopping cart" />
+    </div>
     {% endfor %}
     <div class="row">
       {%for id,guitar in shopping_cart.items %}
@@ -37,7 +32,6 @@
               <button type="submit" class="btn btn-primary ml-2 apply_btn" id="cart_btn_primary_id"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> &nbsp; Apply</button>
             </form>
           </div>
-          
           <div class="row">
             <a href="{% url 'remove_from_cart' guitar_id=guitar.id %}" class="btn btn-danger mt-1 remove_btn">Remove from Cart</a>
           </div>
@@ -45,12 +39,11 @@
       </div>
       {% endfor %}
     </div>
-    
+
     <div class="total_price">
       <p>Total Price: ${{total_price|floatformat:2 }}</p>
     </div>
     <div class="checkout_btn">
-      <a href="{% url 'place_order' %}" class="btn btn-success" id="place_order">PLACE ORDER</a> 
-  {% endblock %}
-  </div>
+      <a href="{% url 'place_order' %}" class="btn btn-success" id="place_order">PLACE ORDER</a> {% endblock %}
+    </div>
   </div>
