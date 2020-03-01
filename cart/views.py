@@ -24,7 +24,7 @@ def add_to_cart(request, guitar_id):
         request.session['shopping_cart'] = cart
         messages.success(request, "New item has been added to your cart!")
     else:
-        messages.success(request, "The guitar is already in your shopping cart")
+        messages.success(request, "Item is already in your shopping cart")
     return redirect('/show_guitars/')
         
 
@@ -48,7 +48,7 @@ def remove_from_cart(request, guitar_id):
     if guitar_id in cart:
         del cart[guitar_id]
         request.session['shopping_cart'] = cart
-        messages.success(request, 'Guitar has been removed')
+        messages.success(request, 'Item has been removed')
         return redirect('/cart/') 
         
 def adjust_cart(request, guitar_id):
