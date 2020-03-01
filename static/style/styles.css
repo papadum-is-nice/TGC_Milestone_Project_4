@@ -284,7 +284,15 @@ text-align: center;
 	padding: 30px;
 }
 
-.logout {
+.profile img {
+	width: 50%;
+}
+
+.profile {
+	text-align-last: center;
+}
+
+.logout{
 	width: 80%;
 	height: 400px;
 	border: 2px solid black;

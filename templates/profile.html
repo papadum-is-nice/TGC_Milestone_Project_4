@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {%block content %}
 <div class="profile">
 <h1>Profile</h1>
 <p>Username: {{current_user.username}}</p>
+<img id="profile" src="{% static 'images/profile.png' %}" alt="Profile">
 </div>
 {%endblock%}

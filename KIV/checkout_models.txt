@@ -1,6 +1,0 @@
-@login_required
-def shipping_form(request):
-
-    return render(request, 'shipping_form.html', {
-        'order_form':OrderForm
-    })
