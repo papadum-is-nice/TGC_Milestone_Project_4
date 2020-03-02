@@ -6,7 +6,7 @@ My project is an E-commerce web application that list and sells vintage electric
 
 Jimbo Guitars also provide private viewing in-store for some of our very special vintage products that we have acquired over the years. Do call us for any enquiries or to arrange for an appointment to test out some of our vintage electric guitars and gears.
 
-This project is deployed on [heroku](http://jimboguitars.herokuapp.com/)
+This project is deployed on [heroku](https://jimboguitars.herokuapp.com/)
 
 This project's repository is also available on [github](https://github.com/papadum-is-nice/TGC_Milestone_Project_4)
 
