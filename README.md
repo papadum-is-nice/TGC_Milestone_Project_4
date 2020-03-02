@@ -10,6 +10,9 @@ This project is deployed on [heroku](http://jimboguitars.herokuapp.com/)
 
 This project's repository is also available on [github](https://github.com/papadum-is-nice/TGC_Milestone_Project_4)
 
+## Wireframes
+Wireframes for this project could be found [here](https://github.com/papadum-is-nice/TGC_Milestone_Project_4/tree/master/static/images/wireframes)
+
 ## UX
 
 This web application is specifically designed for members and the public to view and purchase vintage guitar and gear. Users are greeted by our company logo (at top left) and our vision and mission statement on the home page. As for the rare vintage guitars that we have featured below the welcome statement, our customers are required to contact Jimbo's Guitars directly to arrange for an appointment for viewing if they are interested in playing these special pieces we have. Therefore, these items cannot be purchased online via the site. 
